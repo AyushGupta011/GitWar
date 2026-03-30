@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { fetchRepoStats, fetchCommitActivity, fetchContributors, calculateCityMetrics, parseRepoUrl } from '@/lib/github';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../auth/[...nextauth]/route';
+import { authOptions } from '@/lib/auth'; // Adjust path if needed
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
